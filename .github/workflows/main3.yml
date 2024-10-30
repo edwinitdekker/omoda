@@ -23,5 +23,12 @@ jobs:
         with:
           node-version: '18.x'      
       - run: npm install
-      - uses: stefanoeb/eslint-action@1.0.2     
-      - run: npm test      
+      - run: npm run test:clean
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: stefanoeb/eslint-action@1.0.2      
+      
+
+
