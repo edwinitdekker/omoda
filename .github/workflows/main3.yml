@@ -1,4 +1,4 @@
-name: build-test-deploy
+name: build-test-deploy2
 on: push
 jobs: 
   build:
@@ -21,11 +21,6 @@ jobs:
       - name: use node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'      
+          node-version: '18.x'
       - run: npm install
-      - run: npm run test:clean
-  eslint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2      
+      - run: npm test
